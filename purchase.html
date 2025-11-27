@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product – Purchase Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/Purchase.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/ProductCard.css">
+</head>
+
+<body>
+
+    <!-- 🌍 GLOBAL HEADER (Top Bar + Header + Navbar) -->
+    <div id="globalHeader"></div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="quickViewModal" class="quickview-overlay">
+
+        <div class="quickview-box">
+            <span class="close-quickview">&times;</span>
+
+            <div class="quickview-content">
+
+                <!-- LEFT SIDE -->
+                <div class="quickview-left">
+
+                    <div class="thumb-list" id="qv-thumbs"></div>
+
+                    <div class="main-img">
+                        <img id="quickViewMainImg">
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="quickview-right">
+
+                    <h2 id="qv-title"></h2>
+
+                    <div class="qv-details">
+                        <span class="rating" id="qv-rating"></span>
+                        <span class="stock" id="qv-stock"></span>
+                    </div>
+
+                    <div class="qv-price">
+                        <span class="old-price" id="qv-oldprice"></span>
+                        <span class="new-price" id="qv-newprice"></span>
+                        <span class="discount" id="qv-discount"></span>
+                    </div>
+
+                    <p class="qv-description" id="qv-desc"></p>
+
+                    <div class="qv-actions">
+                        <div class="qty-box">
+                            <button class="qty-minus">-</button>
+                            <span class="qty" id="qv-qty">1</span>
+                            <button class="qty-plus">+</button>
+                        </div>
+
+                        <button class="qv-addcart" id="qv-addcart">Add to Cart 🛒</button>
+                    </div>
+
+                    <div class="qv-meta">
+                        <p><strong>Category:</strong> <span id="qv-category"></span></p>
+                        <p><strong>Tags:</strong> <span id="qv-tags"></span></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="breadcrumb container">
+            <span class="crumb">Home</span>
+            <span class="sep">/</span>
+            <span class="crumb">Categories</span>
+            <span class="sep">/</span>
+            <span class="current">Vegetables</span>
+        </div>
+
+        <!-- Product Section -->
+        <div class="product-page">
+
+            <!-- LEFT COLUMN -->
+            <div class="product-images">
+                <img src="assets/images/cab.svg" class="main-image" id="mainImage">
+
+                <div class="thumbnail-row">
+                    <img src="assets/images/smallcab1.svg" class="thumb" onclick="changeImage(this)">
+                    <img src="assets/images/smallcab2.svg" class="thumb" onclick="changeImage(this)">
+                    <img src="assets/images/smallcab3.svg" class="thumb" onclick="changeImage(this)">
+                    <img src="assets/images/smallcab4.svg" class="thumb" onclick="changeImage(this)">
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="product-info">
+
+                <h1>Chinese Cabbage</h1>
+
+                <div class="rating">★★★★☆ (4.5)</div>
+
+                <div class="price-box">
+                    <span class="price-new">$17.28</span>
+                    <span class="price-old">$24.00</span>
+                    <span class="in-stock">In Stock</span>
+                </div>
+
+                <p>
+                    Chinese cabbage contains various micronutrients such as calcium, potassium,
+                    and vitamins A & C. Perfect for soups, salads, and stir-fry dishes.
+                </p>
+
+                <div class="button-row">
+                    <button class="btn-cart">Add to Cart</button>
+                    
+                </div>
+
+                <div class="meta">
+                    <p><span>Category:</span> Vegetables</p>
+                    <p><span>Tags:</span> Chinese Cabbage, Green Cabbage</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+
+            <div class="tab-buttons">
+                <div class="tab-btn active" onclick="openTab(event, 'desc')">Descriptions</div>
+                <div class="tab-btn" onclick="openTab(event, 'info')">Additional Information</div>
+                <div class="tab-btn" onclick="openTab(event, 'feedback')">Customer Feedback</div>
+            </div>
+
+            <div id="desc" class="tab-content active">
+                <p>
+                    Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris.
+                    Maecenas tincidunt ligula a sem vestibulum pharetra.
+                </p>
+
+                <p>
+                    Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui.
+                </p>
+
+                <p><strong>100 g of fresh leaves provides:</strong></p>
+
+                <ul>
+                    <li>Aliquam ac est at augue volutpat elementum.</li>
+                    <li>Quisque nec enim eget sapien molestie.</li>
+                    <li>Proin convallis odio volutpat finibus posuere.</li>
+                </ul>
+
+            </div>
+
+            <!-- ADDITIONAL DETAILS -->
+            <div class="product-details-list">
+                <div class="detail-row"><span class="label">Weight:</span><span class="value">03</span></div>
+                <div class="detail-row"><span class="label">Color:</span><span class="value">Green</span></div>
+                <div class="detail-row"><span class="label">Type:</span><span class="value">Organic</span></div>
+                <div class="detail-row"><span class="label">Category:</span><span class="value">Vegetables</span></div>
+                <div class="detail-row"><span class="label">Stock Status:</span><span class="value">Available</span></div>
+                <div class="detail-row"><span class="label">Tags:</span><span class="value">Vegetables, Healthy, Chinese</span></div>
+            </div>
+
+            <!-- FEEDBACK SECTION -->
+            <div id="feedback" class="tab-content">
+
+                <!-- REVIEW 1 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-user">
+                            <img src="assets/icons/user.svg" class="review-avatar">
+                            <div>
+                                <h4 class="review-name">Kristin Watson</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <span class="review-time">2 min ago</span>
+                    </div>
+
+                    <p class="review-text">
+                        Duis at ullamcorper nulla, eu dictum eros.
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- REVIEW 2 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-user">
+                            <img src="assets/icons/user.svg" class="review-avatar">
+                            <div>
+                                <h4 class="review-name">Jane Cooper</h4>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                        </div>
+                        <span class="review-time">30 Apr, 2021</span>
+                    </div>
+
+                    <p class="review-text">
+                        Keep the soil evenly moist for the healthiest growth.
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- REVIEW 3 -->
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="review-user">
+                            <img src="assets/icons/user.svg" class="review-avatar">
+                            <div>
+                                <h4 class="review-name">Jacob Jones</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <span class="review-time">2 min ago</span>
+                    </div>
+
+                    <p class="review-text">
+                        Vivamus eget euismod magna.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INFO CARDS -->
+        <div class="info-cards">
+            <div class="info-card">
+                <img src="assets/images/discount.svg">
+                <div>
+                    <h4>Extra Discount</h4>
+                    <p>Save more on every purchase.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <img src="assets/images/organic.svg">
+                <div>
+                    <h4>100% Organic</h4>
+                    <p>Fresh and natural vegetables.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <img src="assets/images/deliver.svg">
+                <div>
+                    <h4>Fast Delivery</h4>
+                    <p>Get your order delivered quickly.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SUCCESS POPUP -->
+    <div id="successPopup" class="popup-overlay">
+        <div class="popup-box">
+
+            <div class="success-icon">
+                <div class="circle">
+                    <span class="checkmark">✔</span>
+                </div>
+            </div>
+
+            <h2>Order Placed Successfully!</h2>
+            <p>Your order has been confirmed and is being processed.</p>
+
+            <button class="popup-close">Continue Shopping</button>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/js/Purchase.js"></script>
+    <script src="assets/js/globalHeader.js"></script>
+    <script src="assets/js/addToCart.js"></script>
+
+</body>
+
+</html>
